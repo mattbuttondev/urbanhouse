@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center gap-12">
           <Link href="/">
-            <h1 className="text-xl font-bold">UrbanHouse</h1>
+            <span className="text-xl font-bold">UrbanHouse</span>
           </Link>
           <nav className="hidden sm:flex">
             <ul className="flex gap-8">
