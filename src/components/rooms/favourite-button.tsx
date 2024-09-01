@@ -1,7 +1,7 @@
 "use client";
 
 import { MouseEvent, useState } from "react";
-import { HeartFill } from "../icons";
+import { Heart, HeartFill } from "../icons";
 
 interface FavouriteButtonProps {
   className?: string;
@@ -19,9 +19,9 @@ const FavouriteButton = ({ className }: FavouriteButtonProps) => {
   return (
     <button className={className} onClick={toggleFavourited}>
       {isFavourited ? (
-        <HeartFill className="stroke-white stroke-2 text-danger-400" />
+        <HeartFill className="text-danger-400" />
       ) : (
-        <HeartFill className="stroke-white stroke-2 text-transparent" />
+        <Heart className="text-white" />
       )}
     </button>
   );
