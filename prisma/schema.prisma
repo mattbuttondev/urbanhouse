@@ -14,12 +14,13 @@ datasource db {
 }
 
 model Room {
-  id         String     @id @default(auto()) @map("_id") @db.ObjectId
-  title      String
-  image      String
-  location   Location
-  attributes Attributes
-  price      Price
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  image       String
+  description String
+  location    Location
+  attributes  Attributes
+  price       Price
 }
 
 type Location {
