@@ -1,7 +1,6 @@
-import Attribute from "@/components/attribute";
-import ExpandableParagraph from "@/components/expandable-paragraph";
 import { Bathtub, Bed, People } from "@/components/icons";
-import Rating from "@/components/rating";
+import { Attribute, Rating } from "@/components/rooms";
+import { ExpandableParagraph } from "@/components/ui";
 import { getRoom } from "@/lib/rooms";
 import { Room } from "@prisma/client";
 import { notFound } from "next/navigation";

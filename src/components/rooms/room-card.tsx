@@ -2,9 +2,9 @@ import { calculateDiscountPercentage, formatPrice } from "@/utils/formatting";
 import { Room } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
+import { Bathtub, Bed, DiscountPercentFill, People, Pin } from "../icons";
 import Attribute from "./attribute";
 import FavouriteButton from "./favourite-button";
-import { Bathtub, Bed, DiscountPercentFill, People, Pin } from "./icons";
 import Rating from "./rating";
 
 interface RoomCardProps {

@@ -1,4 +1,4 @@
-import { StarFill } from "./icons";
+import { StarFill } from "../icons";
 
 interface RatingProps {
   rating: number;

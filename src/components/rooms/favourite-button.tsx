@@ -1,7 +1,7 @@
 "use client";
 
 import { MouseEvent, useState } from "react";
-import { HeartFill } from "./icons";
+import { HeartFill } from "../icons";
 
 interface FavouriteButtonProps {
   className?: string;
