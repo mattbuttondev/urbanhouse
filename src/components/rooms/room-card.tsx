@@ -12,10 +12,16 @@ interface RoomCardProps {
 }
 
 const RoomCard = ({ room }: RoomCardProps) => {
-  const { id, image, title } = room;
+  const { id, images, title } = room;
   const { region, city, country } = room.location;
   const { beds, guests, baths } = room.attributes;
   const { was, amount } = room.price;
+
+  const primaryImage = images.find((image) => image.isPrimary);
+
+  if (!primaryImage) {
+    throw new Error("Invalid primary image");
+  }
 
   const discountPercentage = was
     ? Math.floor(calculateDiscountPercentage(was, amount))
@@ -26,10 +32,11 @@ const RoomCard = ({ room }: RoomCardProps) => {
       <div className="relative h-48">
         {/* Image */}
         <Image
-          src={image}
-          alt={title}
+          src={primaryImage.url}
+          alt={primaryImage.alt}
           className="rounded-2xl object-cover"
           fill
+          sizes="400"
         />
 
         {/* Discount Flag */}

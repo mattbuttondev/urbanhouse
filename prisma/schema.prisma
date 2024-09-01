@@ -16,11 +16,13 @@ datasource db {
 model Room {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
   title       String
-  image       String
+  images      Image[]
   description String
   location    Location
   attributes  Attributes
   price       Price
+  createdAt   DateTime   @default(now()) @map("_createdAt")
+  updatedAt   DateTime   @updatedAt @map("_updatedAt")
 }
 
 type Location {
@@ -38,4 +40,10 @@ type Attributes {
 type Price {
   was    Float?
   amount Float
+}
+
+type Image {
+  url       String
+  alt       String
+  isPrimary Boolean
 }
