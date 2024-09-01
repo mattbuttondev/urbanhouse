@@ -2,16 +2,10 @@ import { calculateDiscountPercentage, formatPrice } from "@/utils/formatting";
 import { Room } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import Attribute from "./Attribute";
-import FavouriteButton from "./FavouriteButton";
-import {
-  Bathtub,
-  Bed,
-  DiscountPercentFill,
-  People,
-  Pin,
-  StarFill,
-} from "./icons";
+import Attribute from "./attribute";
+import FavouriteButton from "./favourite-button";
+import { Bathtub, Bed, DiscountPercentFill, People, Pin } from "./icons";
+import Rating from "./rating";
 
 interface RoomCardProps {
   room: Room;
@@ -40,7 +34,7 @@ const RoomCard = ({ room }: RoomCardProps) => {
 
         {/* Discount Flag */}
         {discountPercentage && (
-          <div className="absolute left-2 top-2 flex gap-2 rounded-full bg-danger-400 px-3 py-2 text-white">
+          <div className="absolute left-2 top-2 flex items-center gap-2 rounded-full bg-danger-400 px-3 py-2 text-white">
             <DiscountPercentFill className="w-5" />
             <p className="font-medium">{discountPercentage}% Off</p>
           </div>
@@ -80,9 +74,9 @@ const RoomCard = ({ room }: RoomCardProps) => {
           />
         </div>
 
-        <div className="flex justify-between gap-4">
+        <div className="flex items-center justify-between gap-4">
           {/* Price */}
-          <div className="mt-2 flex gap-2">
+          <div className="mt-2 flex items-center gap-2">
             {was && (
               <p className="font-medium text-danger-500 line-through">
                 {formatPrice(was)}
@@ -94,10 +88,7 @@ const RoomCard = ({ room }: RoomCardProps) => {
           </div>
 
           {/* Reviews */}
-          <div className="flex items-center">
-            <StarFill className="text-yellow-500" />
-            <p className="font-medium">4.75</p>
-          </div>
+          <Rating rating={4.75} />
         </div>
       </div>
     </Link>

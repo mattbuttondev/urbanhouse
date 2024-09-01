@@ -1,6 +1,6 @@
 import heroImg from "@/assets/hero.png";
 import { Hero, HeroContent, HeroImage } from "@/components/hero";
-import RoomCard from "@/components/RoomCard";
+import RoomCard from "@/components/room-card";
 import { getRooms } from "@/lib/rooms";
 
 const HomePage = async () => {
